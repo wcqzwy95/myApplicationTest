@@ -1,0 +1,15 @@
+server:
+  port: 8989
+  context-path: /myapplicationTest
+spring:
+  #数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/sys?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 950427
+    driver-class-name: com.mysql.jdbc.Driver
+mybatis:
+  type-aliases-package: com.mybatis.generator.entity.user
+  mapper-locations: classpath:mapper/*.xml
+logging:
+  config: classpath:logback-spring.xml
