@@ -1,3 +1,4 @@
+/*
 package com.mybatis.generator.controller;
 
 import com.mybatis.generator.enumUtil.MyExceptionEnum;
@@ -35,3 +36,4 @@ public class UserController {
         return util;
     }
 }
+*/

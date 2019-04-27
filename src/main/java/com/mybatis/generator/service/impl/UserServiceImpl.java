@@ -13,10 +13,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.mybatis.generator.entity.userExample;
 
-@Service
+//@Service
 public class UserServiceImpl implements UserService {
     private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
@@ -25,9 +26,9 @@ public class UserServiceImpl implements UserService {
     public PlainUtil<user> queryUser(String userName, String Password) {
         PlainUtil<user> util = new PlainUtil<>();
         userExample userExample = new userExample();
-        userExample.createCriteria().andNameGreaterThanOrEqualTo(userName);
+        userExample.createCriteria().andUsernameEqualTo(userName);
         List<user> users = userMapper.selectByExample(userExample);
-        if (users == null) {
+        if (users.size() == 0) {
             util.setMessage(MyExceptionEnum.USER_NAME_DOS_NOT_EXIST.getMessage());
             util.setCode(MyExceptionEnum.USER_NAME_DOS_NOT_EXIST.getCode());
             LOGGER.error("UserServiceImpl.queryUser is userNameDosNotExist={}, userName={} ", "", userName);
