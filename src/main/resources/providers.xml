@@ -3,7 +3,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://code.alibabatech.com/schema/dubbo
        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
-    <dubbo:application name="dubbo-provider" owner="dubbo-provider"/>
+    <!--<dubbo:application name="dubbo-provider" owner="dubbo-provider"/>
     <dubbo:registry address="zookeeper://localhost:2181" check="false"/>
-    <dubbo:reference interface="com.mybatis.generator.service.impl.UserServiceImpl" id="userServiceImpl"/>
+    <dubbo:service interface="com.mybatis.generator.service.intf.UserService" ref="userService"/>-->
+
+
 </beans>

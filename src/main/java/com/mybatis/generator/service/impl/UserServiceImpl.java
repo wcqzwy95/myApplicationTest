@@ -16,8 +16,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import com.mybatis.generator.entity.userExample;
-
-//@Service
+@Service("userService")
 public class UserServiceImpl implements UserService {
     private static Logger LOGGER = LoggerFactory.getLogger(UserServiceImpl.class);
     @Autowired
