@@ -36,6 +36,7 @@ public class UserServiceImpl implements UserService {
             String salt = user.getSalt();
             String saltMD = RandomNumber.getSaltMD(Password, salt);
             String[] split = saltMD.split(",");
+            System.out.println(split[0]);
             if (user.getPassword().equals(split[0])) {
                 util.setData(user);
                 util.setMessage(MyExceptionEnum.SUCCESS.getMessage());
